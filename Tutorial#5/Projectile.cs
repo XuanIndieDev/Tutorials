@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
     private void Update()
     {
         moveDirection = target.transform.position - transform.position;
-        transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(-moveDirection.y, -moveDirection.x) * Mathf.Rad2Deg, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(-moveDirection.y, -moveDirection.x) * Mathf.Rad2Deg, Vector3.forward);//此处为反方向如果想改成正方向把Atan2函数中的俩个参数改成正的就行了
         transform.rotation *= Quaternion.Euler(0f, 0f, Angle);
         Move();
 
